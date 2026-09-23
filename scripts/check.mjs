@@ -2,7 +2,7 @@ import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import config from "../site.config.mjs";
-import { themes } from "../src/themes.mjs";
+import { resolveTheme, themes } from "../src/themes.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
@@ -45,6 +45,8 @@ const requiredStrings = [
   ["seo.description", config.seo?.description],
   ["seo.canonical", config.seo?.canonical],
   ["contact.primaryUrl", config.contact?.primaryUrl],
+  ["contact.footerPrimaryLabel", config.contact?.footerPrimaryLabel],
+  ["contact.socialLabel", config.contact?.socialLabel],
   ["hero.image", config.hero?.image],
   ["location.mapEmbedUrl", config.location?.mapEmbedUrl],
   ["location.address.street", config.location?.address?.street],
@@ -55,8 +57,7 @@ for (const [label, value] of requiredStrings) {
   if (!value || typeof value !== "string") failures.push(`${label} must be a non-empty string`);
 }
 
-if (!themes[config.preset]) failures.push(`Unknown preset: ${config.preset}`);
-for (const [themeName, theme] of Object.entries(themes)) {
+function validateThemeContrast(themeName, theme) {
   const pairs = [
     ["paper on ink", theme.colors.paper, theme.colors.ink],
     ["muted copy on dark", theme.colors.mutedOnDark, theme.colors.inkSoft],
@@ -70,8 +71,28 @@ for (const [themeName, theme] of Object.entries(themes)) {
     }
   }
 }
+
+if (!themes[config.preset]) failures.push(`Unknown preset: ${config.preset}`);
+for (const [themeName, theme] of Object.entries(themes)) {
+  validateThemeContrast(themeName, theme);
+}
+validateThemeContrast("current configuration", resolveTheme(config));
 if (!Array.isArray(config.services?.items) || config.services.items.length < 2) {
   failures.push("services.items must contain at least two services");
+}
+
+if (config.gallery?.items) {
+  if (!Array.isArray(config.gallery.items) || config.gallery.items.length === 0) {
+    failures.push("gallery.items must contain at least one item when gallery is configured");
+  } else {
+    for (const [index, item] of config.gallery.items.entries()) {
+      for (const field of ["image", "alt", "caption"]) {
+        if (!item?.[field] || typeof item[field] !== "string") {
+          failures.push(`gallery.items[${index}].${field} must be a non-empty string`);
+        }
+      }
+    }
+  }
 }
 if (!Array.isArray(config.reviews?.items) || config.reviews.items.length < 1) {
   failures.push("reviews.items must contain at least one review");
@@ -86,7 +107,13 @@ try {
   failures.push("seo.canonical must be an absolute URL");
 }
 
-for (const asset of [config.brand?.logo, config.hero?.image]) {
+const configuredAssets = [
+  config.brand?.logo,
+  config.hero?.image,
+  ...(config.gallery?.items ?? []).map((item) => item.image),
+];
+
+for (const asset of configuredAssets) {
   if (!asset?.startsWith("/assets/")) continue;
   try {
     await access(path.join(root, "public", asset));

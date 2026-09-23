@@ -10,7 +10,7 @@ The template is used by independent developers, studios, and small teams that ne
 
 ## Product Purpose
 
-Turn the D2 Bike Shop landing page into a reusable white-label foundation without flattening its personality. Success means a new business can be launched by changing one configuration file and its assets while retaining strong hierarchy, credible local proof, accessible behavior, search-ready metadata, and an intentional visual point of view.
+Provide a reusable white-label foundation without flattening each client's personality. Success means a new business can be launched by changing one configuration file and its assets while retaining strong hierarchy, credible local proof, accessible behavior, search-ready metadata, and an intentional visual point of view.
 
 ## Brand Personality
 

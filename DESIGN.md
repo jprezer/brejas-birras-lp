@@ -69,7 +69,7 @@ components:
 
 **Creative North Star: "Vitrine de Rua"**
 
-Local Label should feel like the most confident storefront on a real block: legible from a distance, specific up close, and immediately useful. Its default D2 expression is physical, energetic, and high-contrast, while the token layer lets other businesses change the atmosphere without dismantling the hierarchy.
+Local Label should feel like the most confident storefront on a real block: legible from a distance, specific up close, and immediately useful. Its fictional Casa Brasa demonstration is warm, physical, and high-contrast, while the token layer lets other businesses change the atmosphere without dismantling the hierarchy.
 
 The system is image-led and flat by default. Scale, color fields, rules, and typography create structure; effects never substitute for real business proof. It explicitly rejects generic marketplace templates, interchangeable SaaS landing pages, glassmorphism, endless icon-card grids, timid neutral palettes, fake editorial luxury, and decorative gradients.
 

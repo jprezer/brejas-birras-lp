@@ -226,7 +226,7 @@ button {
 .hero-media {
   z-index: -3;
   object-fit: cover;
-  object-position: 58% center;
+  object-position: var(--hero-position, 58% center);
   filter: saturate(0.78) contrast(1.08);
   transform: scale(1.015);
 }
@@ -525,6 +525,67 @@ button {
   font-size: 0.73rem;
   font-weight: 700;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gallery {
+  padding-block: var(--space-section);
+  background: var(--color-ink);
+}
+
+.gallery-heading {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.45fr) minmax(0, 1.55fr);
+  align-items: end;
+  gap: clamp(2rem, 7vw, 7rem);
+}
+
+.gallery-heading h2 {
+  max-width: 48rem;
+  font-size: clamp(3.3rem, 6.5vw, 6rem);
+  line-height: 0.88;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.8vw, 1.5rem);
+}
+
+.gallery-item {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-surface);
+  background: var(--color-ink-soft);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.04);
+  transition: transform 650ms var(--ease-out), filter 350ms var(--ease-out);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.035);
+  filter: saturate(1) contrast(1.02);
+}
+
+.gallery-item figcaption {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-button);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -902,6 +963,11 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .gallery-heading {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
   .review-featured {
     padding-right: 0;
   }
@@ -956,10 +1022,6 @@ button {
     min-height: 43rem;
     padding-top: 8.5rem;
     padding-bottom: 4.25rem;
-  }
-
-  .hero-media {
-    object-position: 65% center;
   }
 
   .hero-shade {
@@ -1037,6 +1099,18 @@ button {
   .service-detail {
     grid-column: 2;
     margin-top: -0.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-item:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .gallery-item:first-child {
+    aspect-ratio: 16 / 10;
   }
 
   .rating {

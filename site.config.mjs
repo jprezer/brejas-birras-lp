@@ -1,153 +1,168 @@
 export default {
-  preset: "impact",
+  preset: "warm",
 
   brand: {
-    name: "D2 Bike Shop",
-    shortName: "D2",
-    tagline: "Pedale o seu caminho.",
-    logo: "/assets/d2-bike-shop-logo-wide.png",
-    logoAlt: "D2 Bike Shop",
+    name: "Casa Brasa",
+    shortName: "CB",
+    tagline: "Fogo, tempo e mesa cheia.",
+    logo: "/assets/casa-brasa-logo.svg",
+    logoAlt: "Casa Brasa",
   },
 
   seo: {
-    title: "D2 Bike Shop | Bicicletas e oficina em Araucária",
+    title: "Casa Brasa | Cozinha de fogo em Curitiba",
     description:
-      "D2 Bike Shop em Araucária: bicicletas, oficina especializada, acessórios e atendimento para quem vive o ciclismo.",
+      "Cozinha de fogo, ingredientes locais e uma mesa feita para ficar. Conheça a Casa Brasa, no Batel, em Curitiba.",
     keywords: [
-      "bike shop Araucária",
-      "bicicletas Araucária",
-      "oficina de bicicletas Araucária",
-      "acessórios para bike",
+      "restaurante em Curitiba",
+      "cozinha de fogo",
+      "restaurante no Batel",
+      "Casa Brasa",
     ],
-    canonical: "https://d2-bike-shop-araucaria.dagamavazco.chatgpt.site/",
+    canonical: "https://casabrasa.example/",
     locale: "pt_BR",
-    schemaType: "BicycleStore",
+    schemaType: "Restaurant",
   },
 
   announcement: {
-    label: "Araucária, Paraná",
-    actionLabel: "Fale no WhatsApp",
+    label: "Batel · Curitiba",
+    actionLabel: "Reservas para esta noite",
   },
 
   contact: {
-    primaryLabel: "Chamar no WhatsApp",
-    primaryUrl: "https://wa.me/5541998618722",
-    phone: "+55 41 99861-8722",
-    instagramLabel: "Ver Instagram",
-    instagramUrl: "https://www.instagram.com/d2bikeshop/",
-    mapsUrl: "https://maps.app.goo.gl/2ccZhxQbB5eRjo518",
+    primaryLabel: "Reservar uma mesa",
+    footerPrimaryLabel: "Reservas",
+    primaryUrl: "#visite",
+    phone: "+55 41 99999-0000",
+    instagramLabel: "Conheça a casa",
+    socialLabel: "Instagram",
+    instagramUrl: "https://www.instagram.com/",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Batel%2C+Curitiba%2C+PR",
   },
 
   navigation: [
-    { label: "Serviços", href: "#servicos" },
-    { label: "Avaliações", href: "#avaliacoes" },
+    { label: "Experiência", href: "#servicos" },
+    { label: "À mesa", href: "#avaliacoes" },
     { label: "Visite", href: "#visite" },
   ],
 
   hero: {
-    kicker: "Pedale mais longe",
-    title: ["Sua bike.", "Sua melhor", "versão."],
+    kicker: "Cozinha de fogo em Curitiba",
+    title: ["Fogo lento.", "Mesa", "cheia."],
     accentLine: 1,
     description:
-      "Mais do que uma bike shop: o ponto de encontro de quem vive o ciclismo em Araucária.",
-    image: "/assets/hero-bike-shop.jpg",
-    imageAlt: "Fachada da D2 Bike Shop com bicicletas em exposição",
-    proofLabel: "Revenda autorizada",
-    proofValue: "Kode · Oggi",
-    scrollLabel: "Conheça a D2",
+      "Ingredientes locais, brasa acesa e pratos feitos para atravessar a noite sem pressa.",
+    image: "/assets/casa-brasa-hero.jpg",
+    imageAlt: "Chef finalizando um prato entre as chamas da cozinha",
+    imagePosition: "58% center",
+    proofLabel: "Cozinha aberta",
+    proofValue: "Terça a domingo",
+    scrollLabel: "Descubra a casa",
   },
 
   statement: {
-    label: "A experiência D2",
-    text: "Do primeiro giro ao próximo desafio. Escolhas certas fazem cada pedalada contar.",
-    accent: "desafio.",
+    label: "Nossa mesa",
+    text: "A chama muda o ingrediente. O tempo transforma a refeição em encontro.",
+    accent: "encontro.",
   },
 
   services: {
-    title: "Tudo para ir além.",
+    title: "Da brasa para a mesa.",
     description:
-      "Atendimento de quem entende que bicicleta não é só transporte. É liberdade, performance e conexão.",
+      "Uma cozinha direta, guiada pela estação e feita para dividir. Cada serviço tem o ritmo da chama e o cuidado de quem recebe.",
     items: [
       {
-        title: "Bicicletas",
-        description: "Encontre a companheira certa para a sua próxima rota.",
-        detail: "Urbanas · MTB · Performance",
+        title: "Menu de fogo",
+        description:
+          "Carnes, vegetais e acompanhamentos preparados na brasa e servidos no centro da mesa.",
+        detail: "Ingredientes locais · Safra do dia",
       },
       {
-        title: "Oficina",
-        description: "Cuidado técnico e atenção aos detalhes para você rodar tranquilo.",
-        detail: "Revisão · Ajustes · Manutenção",
+        title: "Bar da casa",
+        description:
+          "Drinks autorais, vinhos de pequenos produtores e sugestões para acompanhar cada prato.",
+        detail: "Coquetéis · Vinhos · Sem álcool",
       },
       {
-        title: "Equipamentos",
-        description: "Itens essenciais para pedalar com mais segurança e personalidade.",
-        detail: "Capacetes · Acessórios · Peças",
+        title: "Mesa compartilhada",
+        description:
+          "Um salão acolhedor para jantares, encontros e celebrações sem cerimônia.",
+        detail: "Reservas · Grupos · Eventos",
       },
     ],
   },
 
+  // Para exibir uma galeria, adicione `gallery` seguindo o exemplo do README.
+
   reviews: {
-    label: "Avaliações no Google",
-    title: "Quem pedala com a D2 recomenda.",
-    rating: "4,8",
-    total: "Mais de 54 avaliações",
-    sourceLabel: "Ver avaliações no Google Maps",
+    label: "Avaliações de demonstração",
+    title: "Uma noite para ficar na memória.",
+    rating: "4,9",
+    total: "Conteúdo fictício para personalização",
+    sourceLabel: "Ver localização no Google Maps",
     items: [
       {
         quote:
-          "Excelente atendimento, no pós-venda são prestativos, ambiente gostoso, loja organizada e uma loja que passa confiança.",
-        author: "Sandra Baptista de Miranda Lovato",
+          "A comida chega no centro da mesa e muda o ritmo da noite. Tudo tem sabor de cuidado.",
+        author: "Cliente de exemplo",
         score: "5/5",
       },
       {
         quote:
-          "Sou cliente desde 2021 e nunca tive problemas. São muito atenciosos, prestativos e bons de negócios.",
-        author: "Mauricio Tavares",
+          "Ambiente bonito sem ser formal, serviço atento e uma seleção de vinhos muito bem pensada.",
+        author: "Cliente de exemplo",
         score: "5/5",
       },
       {
         quote:
-          "Atendimento de qualidade, equipe superatenciosa e bastante variedade de produtos e bikes.",
-        author: "Felipe Gabriel de Souza Marcos",
+          "Voltaria só pelo pão na brasa, mas o jantar inteiro foi excelente.",
+        author: "Cliente de exemplo",
         score: "5/5",
       },
     ],
   },
 
   location: {
-    label: "Venha nos visitar",
-    title: "A próxima aventura começa aqui.",
+    label: "Venha para a mesa",
+    title: "No coração do Batel.",
     description:
-      "Passe na D2 Bike Shop, converse com a nossa equipe e encontre o que o seu pedal precisa.",
-    actionLabel: "Traçar rota até a loja",
-    addressLines: [
-      "Av. Dr. Victor do Amaral, 1217",
-      "Centro · Araucária — PR",
-    ],
+      "A Casa Brasa é uma marca fictícia criada para demonstrar o white label. Substitua todos os dados antes de publicar.",
+    actionLabel: "Abrir região no Google Maps",
+    addressLines: ["Rua de Exemplo, 120", "Batel · Curitiba — PR"],
     address: {
-      street: "Avenida Doutor Victor do Amaral, 1217",
-      city: "Araucária",
+      street: "Rua de Exemplo, 120",
+      city: "Curitiba",
       region: "PR",
-      postalCode: "83702-040",
+      postalCode: "80000-000",
       country: "BR",
     },
     hours: [
-      "Segunda a sexta · 09h às 18h30",
-      "Sábado · 09h às 13h",
-      "Domingo · Fechado",
+      "Terça a quinta · 18h às 23h",
+      "Sexta e sábado · 18h à 00h",
+      "Domingo · 12h às 17h",
     ],
     openingHours: [
-      { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:30" },
-      { days: ["Saturday"], opens: "09:00", closes: "13:00" },
+      {
+        days: ["Tuesday", "Wednesday", "Thursday"],
+        opens: "18:00",
+        closes: "23:00",
+      },
+      {
+        days: ["Friday", "Saturday"],
+        opens: "18:00",
+        closes: "00:00",
+      },
+      { days: ["Sunday"], opens: "12:00", closes: "17:00" },
     ],
     mapEmbedUrl:
-      "https://www.google.com/maps?q=Av.+Dr.+V%C3%ADtor+do+Amaral,+1217,+Arauc%C3%A1ria+-+PR&output=embed",
+      "https://www.google.com/maps?q=Batel,+Curitiba,+PR&output=embed",
   },
 
   theme: {
-    accent: null,
-    ink: null,
-    paper: null,
+    accent: "oklch(70% 0.17 245)",
+    ink: "oklch(18% 0.025 30)",
+    paper: "oklch(97% 0.004 30)",
     displayFont: null,
     bodyFont: null,
   },

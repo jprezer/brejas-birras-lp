@@ -19,6 +19,14 @@ const safeUrl = (value = "") => {
 const externalAttrs = (url = "") =>
   /^https?:/i.test(url) ? ' target="_blank" rel="noreferrer"' : "";
 
+const safeImagePosition = (value) => {
+  const position = String(value ?? "").trim();
+  const token = "(?:left|center|right|top|bottom|(?:100|[0-9]{1,2})(?:\\.[0-9]+)?%)";
+  return new RegExp(`^${token}(?:\\s+${token})?$`, "i").test(position)
+    ? position
+    : "58% center";
+};
+
 const renderArrow = () => `
   <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20">
     <path d="M4 10h11M10.5 4.5 16 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
@@ -50,6 +58,17 @@ const renderServices = (items) =>
           </div>
           <p class="service-detail">${escapeHtml(item.detail)}</p>
         </article>`,
+    )
+    .join("");
+
+const renderGallery = (items = []) =>
+  items
+    .map(
+      (item, index) => `
+        <figure class="gallery-item gallery-item-${index + 1}">
+          <img src="${safeUrl(item.image)}" alt="${escapeHtml(item.alt)}" width="900" height="1200" loading="lazy" />
+          <figcaption>${escapeHtml(item.caption)}</figcaption>
+        </figure>`,
     )
     .join("");
 
@@ -162,7 +181,7 @@ export function renderPage(config) {
     <div class="announcement">
       <span>${escapeHtml(config.announcement.label)}</span>
       <a href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>
-        ${escapeHtml(config.announcement.actionLabel)} ${renderArrow()}
+        ${escapeHtml(config.announcement.actionLabel)}${renderArrow()}
       </a>
     </div>
 
@@ -190,7 +209,7 @@ export function renderPage(config) {
     </header>
 
     <main id="conteudo">
-      <section class="hero" id="inicio">
+      <section class="hero" id="inicio" style="--hero-position: ${safeImagePosition(config.hero.imagePosition)}">
         <img class="hero-media" src="${safeUrl(config.hero.image)}" alt="${escapeHtml(config.hero.imageAlt)}" width="1600" height="1067" fetchpriority="high" />
         <div class="hero-shade"></div>
         <div class="hero-content">
@@ -199,7 +218,7 @@ export function renderPage(config) {
           <p class="hero-description">${escapeHtml(config.hero.description)}</p>
           <div class="hero-actions">
             <a class="button button-primary" href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>
-              ${escapeHtml(config.contact.primaryLabel)} ${renderArrow()}
+              ${escapeHtml(config.contact.primaryLabel)}${renderArrow()}
             </a>
             <a class="text-link" href="${safeUrl(config.contact.instagramUrl)}"${externalAttrs(config.contact.instagramUrl)}>
               ${escapeHtml(config.contact.instagramLabel)}
@@ -223,6 +242,15 @@ export function renderPage(config) {
         <div class="service-list">${renderServices(config.services.items)}</div>
       </section>
 
+${config.gallery?.items?.length ? `
+      <section class="gallery section-shell" id="momentos">
+        <div class="gallery-heading">
+          <p class="section-label">${escapeHtml(config.gallery.label)}</p>
+          <h2>${escapeHtml(config.gallery.title)}</h2>
+        </div>
+        <div class="gallery-grid">${renderGallery(config.gallery.items)}</div>
+      </section>` : ""}
+
       <section class="reviews section-shell" id="avaliacoes">
         <div class="reviews-heading">
           <div>
@@ -237,7 +265,7 @@ export function renderPage(config) {
         </div>
         <div class="review-layout">${renderReviews(config.reviews.items)}</div>
         <a class="source-link" href="${safeUrl(config.contact.mapsUrl)}"${externalAttrs(config.contact.mapsUrl)}>
-          ${escapeHtml(config.reviews.sourceLabel)} ${renderArrow()}
+          ${escapeHtml(config.reviews.sourceLabel)}${renderArrow()}
         </a>
       </section>
 
@@ -248,7 +276,7 @@ export function renderPage(config) {
             <h2>${escapeHtml(config.location.title)}</h2>
             <p>${escapeHtml(config.location.description)}</p>
             <a class="button button-inverse" href="${safeUrl(config.contact.mapsUrl)}"${externalAttrs(config.contact.mapsUrl)}>
-              ${escapeHtml(config.location.actionLabel)} ${renderArrow()}
+              ${escapeHtml(config.location.actionLabel)}${renderArrow()}
             </a>
           </div>
           <div class="visit-details">
@@ -264,7 +292,7 @@ export function renderPage(config) {
         </div>
         <div class="map-frame">
           <iframe title="Localização de ${escapeHtml(config.brand.name)}" src="${safeUrl(config.location.mapEmbedUrl)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <a href="${safeUrl(config.contact.mapsUrl)}"${externalAttrs(config.contact.mapsUrl)}>Abrir no mapa ${renderArrow()}</a>
+          <a href="${safeUrl(config.contact.mapsUrl)}"${externalAttrs(config.contact.mapsUrl)}>Abrir no mapa${renderArrow()}</a>
         </div>
       </section>
     </main>
@@ -275,9 +303,9 @@ export function renderPage(config) {
       </a>
       <p>${escapeHtml(config.brand.tagline)}</p>
       <div>
-        <a href="${safeUrl(config.contact.instagramUrl)}"${externalAttrs(config.contact.instagramUrl)}>Instagram</a>
+        <a href="${safeUrl(config.contact.instagramUrl)}"${externalAttrs(config.contact.instagramUrl)}>${escapeHtml(config.contact.socialLabel)}</a>
         <span aria-hidden="true">·</span>
-        <a href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>WhatsApp</a>
+        <a href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>${escapeHtml(config.contact.footerPrimaryLabel)}</a>
       </div>
       <small>© <span data-year></span> ${escapeHtml(config.brand.name)}</small>
     </footer>

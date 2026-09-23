@@ -1,6 +1,6 @@
 # Local Label
 
-Uma base white-label para landing pages de negócios locais, extraída da D2 Bike Shop. A D2 permanece como demonstração real; identidade, conteúdo, SEO, contatos e localização vivem em configuração, separados da estrutura visual.
+Uma base white-label para landing pages de negócios locais. A marca fictícia Casa Brasa demonstra como identidade, conteúdo, SEO, contatos, galeria e localização mudam sem desmontar a estrutura visual.
 
 ## Comece em cinco minutos
 
@@ -18,7 +18,7 @@ O projeto não possui dependências de runtime ou de build. O gerador usa apenas
 - título, descrição, palavras-chave, canonical e tipo Schema.org;
 - aviso superior, menu e ação principal;
 - foto, headline, prova de marca e CTAs do hero;
-- manifesto, serviços, avaliações e nota;
+- manifesto, serviços, galeria opcional, avaliações e nota;
 - endereço, horários, mapa, Instagram e WhatsApp;
 - preset visual e ajustes de cor ou tipografia.
 
@@ -26,11 +26,35 @@ O projeto não possui dependências de runtime ou de build. O gerador usa apenas
 
 Altere `preset` no início de `site.config.mjs`:
 
-- `impact`: alto contraste e energia; é o preset da D2;
+- `impact`: alto contraste e energia para varejo, esporte e marcas diretas;
 - `sober`: azul mineral e ritmo mais contido para serviços profissionais;
 - `warm`: vermelho profundo e formas mais acolhedoras para hospitalidade e bem-estar.
 
 Os presets ficam em `src/themes.mjs`. Para uma marca específica, prefira sobrescrever `theme.accent`, `theme.ink`, `theme.paper`, `theme.displayFont` ou `theme.bodyFont` no arquivo de configuração. As cores aceitam OKLCH.
+
+Ao trocar apenas `theme.accent`, o tom auxiliar usado nos estados e destaques é calculado automaticamente. Você ainda pode defini-lo manualmente com `theme.accentStrong`.
+
+## Recursos opcionais
+
+Controle o enquadramento da foto principal com `hero.imagePosition`, usando valores como `center 35%` ou `right center`.
+
+Para incluir uma galeria entre serviços e avaliações, adicione ao `site.config.mjs`:
+
+```js
+gallery: {
+  label: "Dentro da casa",
+  title: "Experiências que contam a história.",
+  items: [
+    {
+      image: "/assets/ambiente.jpg",
+      alt: "Descrição objetiva da imagem",
+      caption: "Ambiente",
+    },
+  ],
+},
+```
+
+Inclua também um link para `#momentos` em `navigation` se quiser destacar a seção no menu.
 
 ## Estrutura
 
@@ -51,7 +75,9 @@ dist/                 saída pronta para deploy
 - Use uma foto real e decisiva no hero; não substitua a imagem por um bloco decorativo.
 - Mantenha apenas uma ação principal. Para comércio local, WhatsApp, ligação, reserva ou rota funcionam melhor.
 - Publique avaliações verdadeiras e mantenha nome, nota e fonte.
+- Remova todo conteúdo marcado como fictício na demonstração antes de publicar.
 - Revise todos os metadados e URLs antes do deploy.
+- Troque o domínio `.example` usado no `canonical` pela URL final do projeto.
 - Teste a página em 360 px, 768 px e desktop, além de navegação por teclado.
 - Rode `npm run check` depois de `npm run build`.
 

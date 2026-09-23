@@ -69,7 +69,14 @@ export function resolveTheme(config) {
     ...preset,
     colors: {
       ...preset.colors,
-      ...(overrides.accent ? { accent: overrides.accent } : {}),
+      ...(overrides.accent
+        ? {
+            accent: overrides.accent,
+            accentStrong:
+              overrides.accentStrong ??
+              `color-mix(in oklch, ${overrides.accent} 82%, white)`,
+          }
+        : {}),
       ...(overrides.ink ? { ink: overrides.ink } : {}),
       ...(overrides.paper ? { paper: overrides.paper } : {}),
     },
