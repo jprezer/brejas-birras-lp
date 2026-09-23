@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T22:10:00.6902256-03:00",
+  "title": "Design System: Local Label",
+  "extensions": {
+    "colorMeta": {
+      "street-ink": {
+        "role": "neutral",
+        "displayName": "Street Ink",
+        "canonical": "oklch(17% 0.008 150)",
+        "tonalRamp": ["oklch(15% 0.008 150)", "oklch(24% 0.008 150)", "oklch(35% 0.008 150)", "oklch(48% 0.008 150)", "oklch(61% 0.008 150)", "oklch(73% 0.008 150)", "oklch(85% 0.008 150)", "oklch(95% 0.008 150)"]
+      },
+      "street-surface": {
+        "role": "neutral",
+        "displayName": "Street Surface",
+        "canonical": "oklch(23% 0.009 150)",
+        "tonalRamp": ["oklch(15% 0.009 150)", "oklch(24% 0.009 150)", "oklch(35% 0.009 150)", "oklch(48% 0.009 150)", "oklch(61% 0.009 150)", "oklch(73% 0.009 150)", "oklch(85% 0.009 150)", "oklch(95% 0.009 150)"]
+      },
+      "signal-orange": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "oklch(68% 0.2 42)",
+        "tonalRamp": ["oklch(15% 0.12 42)", "oklch(27% 0.16 42)", "oklch(39% 0.18 42)", "oklch(52% 0.2 42)", "oklch(64% 0.2 42)", "oklch(75% 0.17 42)", "oklch(86% 0.1 42)", "oklch(95% 0.04 42)"]
+      },
+      "signal-orange-active": {
+        "role": "primary",
+        "displayName": "Signal Orange Active",
+        "canonical": "oklch(74% 0.19 45)",
+        "tonalRamp": ["oklch(15% 0.11 45)", "oklch(27% 0.15 45)", "oklch(39% 0.18 45)", "oklch(52% 0.19 45)", "oklch(64% 0.19 45)", "oklch(75% 0.17 45)", "oklch(86% 0.1 45)", "oklch(95% 0.04 45)"]
+      },
+      "clean-paper": {
+        "role": "neutral",
+        "displayName": "Clean Paper",
+        "canonical": "oklch(96% 0.006 95)",
+        "tonalRamp": ["oklch(15% 0.006 95)", "oklch(27% 0.006 95)", "oklch(39% 0.006 95)", "oklch(52% 0.006 95)", "oklch(64% 0.006 95)", "oklch(76% 0.006 95)", "oklch(87% 0.006 95)", "oklch(96% 0.006 95)"]
+      },
+      "muted-on-dark": {
+        "role": "neutral",
+        "displayName": "Muted on Dark",
+        "canonical": "oklch(78% 0.008 95)",
+        "tonalRamp": ["oklch(15% 0.008 95)", "oklch(27% 0.008 95)", "oklch(39% 0.008 95)", "oklch(52% 0.008 95)", "oklch(64% 0.008 95)", "oklch(76% 0.008 95)", "oklch(87% 0.008 95)", "oklch(95% 0.008 95)"]
+      },
+      "muted-on-light": {
+        "role": "neutral",
+        "displayName": "Muted on Light",
+        "canonical": "oklch(45% 0.01 95)",
+        "tonalRamp": ["oklch(15% 0.01 95)", "oklch(27% 0.01 95)", "oklch(39% 0.01 95)", "oklch(52% 0.01 95)", "oklch(64% 0.01 95)", "oklch(76% 0.01 95)", "oklch(87% 0.01 95)", "oklch(95% 0.01 95)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Storefront Display", "purpose": "Short hero promises only." },
+      "headline": { "displayName": "Section Headline", "purpose": "Major section promises and statements." },
+      "body": { "displayName": "Practical Body", "purpose": "Descriptions, reviews, hours, and location copy." },
+      "label": { "displayName": "Action Label", "purpose": "Navigation, metadata, and compact actions." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All interactive movement and hero choreography." },
+      { "name": "state-fast", "value": "220ms", "purpose": "Button, underline, and menu state changes." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "720px" },
+      { "name": "navigation", "value": "992px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single dominant conversion action.",
+      "html": "<button class=\"ds-btn-primary\">FALE AGORA <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary{min-height:54px;padding:15px 18px;display:inline-flex;align-items:center;gap:20px;border:0;border-radius:var(--radius-button,2px);background:var(--color-accent,oklch(68% .2 42));color:var(--color-ink,oklch(17% .008 150));font:800 .72rem/1 Manrope,Arial,sans-serif;letter-spacing:.085em;transition:transform 220ms cubic-bezier(.16,1,.3,1),background 220ms cubic-bezier(.16,1,.3,1)}.ds-btn-primary:hover{transform:translateY(-3px);background:var(--color-accent-strong,oklch(74% .19 45))}.ds-btn-primary:focus-visible{outline:3px solid var(--color-accent-strong,oklch(74% .19 45));outline-offset:4px}"
+    },
+    {
+      "name": "Inverse Button",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "The primary action when it sits on the accent field.",
+      "html": "<button class=\"ds-btn-inverse\">TRAÇAR ROTA <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-inverse{min-height:54px;padding:15px 18px;display:inline-flex;align-items:center;gap:20px;border:0;border-radius:var(--radius-button,2px);background:var(--color-ink,oklch(17% .008 150));color:var(--color-paper,oklch(96% .006 95));font:800 .72rem/1 Manrope,Arial,sans-serif;letter-spacing:.085em;transition:transform 220ms cubic-bezier(.16,1,.3,1)}.ds-btn-inverse:hover{transform:translateY(-3px)}.ds-btn-inverse:focus-visible{outline:3px solid var(--color-paper,oklch(96% .006 95));outline-offset:4px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "description": "A quiet secondary action that never competes with the filled CTA.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">VER DETALHES</a>",
+      "css": ".ds-text-link{display:inline-flex;padding:15px 4px 12px;border-bottom:1px solid currentColor;color:inherit;font:800 .7rem/1 Manrope,Arial,sans-serif;letter-spacing:.095em;text-decoration:none}.ds-text-link:focus-visible{outline:3px solid var(--color-accent,oklch(68% .2 42));outline-offset:4px}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "description": "A full-width offer row that replaces generic icon cards.",
+      "html": "<article class=\"ds-service\"><span class=\"ds-service-mark\" aria-hidden=\"true\">→</span><div><h3>SERVIÇO PRINCIPAL</h3><p>Uma descrição concreta do valor entregue ao cliente.</p></div></article>",
+      "css": ".ds-service{padding:28px 0;display:grid;grid-template-columns:52px 1fr;gap:24px;align-items:center;border-top:1px solid color-mix(in oklch,var(--color-paper,#fff) 18%,transparent);border-bottom:1px solid color-mix(in oklch,var(--color-paper,#fff) 18%,transparent);color:var(--color-paper,#fff)}.ds-service-mark{width:52px;height:52px;display:grid;place-items:center;border:1px solid currentColor;border-radius:999px}.ds-service h3{margin:0;font:800 2.4rem/.95 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:-.025em}.ds-service p{margin:8px 0 0;color:var(--color-muted-dark,#bbb);font:500 1rem/1.6 Manrope,Arial,sans-serif}"
+    },
+    {
+      "name": "Proof Quote",
+      "kind": "card",
+      "description": "A featured testimonial that reads as evidence, not a floating card.",
+      "html": "<article class=\"ds-proof\"><span aria-hidden=\"true\">“</span><blockquote>Atendimento que passa confiança desde o primeiro contato.</blockquote><p>NOME DO CLIENTE · 5/5</p></article>",
+      "css": ".ds-proof{max-width:720px;padding:40px 0;border-top:1px solid color-mix(in oklch,var(--color-ink,#111) 18%,transparent);border-bottom:1px solid color-mix(in oklch,var(--color-ink,#111) 18%,transparent);color:var(--color-ink,#111)}.ds-proof>span{color:var(--color-accent,oklch(68% .2 42));font:400 5rem/.55 Georgia,serif}.ds-proof blockquote{margin:30px 0;font:700 2.8rem/1.05 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:-.02em}.ds-proof p{margin:0;color:var(--color-muted-light,#666);font:800 .69rem/1.2 Manrope,Arial,sans-serif;letter-spacing:.06em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Vitrine de Rua",
+    "overview": "Local Label should feel like the most confident storefront on a real block: legible from a distance, specific up close, and immediately useful. The system is image-led and flat by default. Scale, color fields, rules, and typography create structure; effects never substitute for real business proof.",
+    "keyCharacteristics": [
+      "decisive photography and large condensed headlines",
+      "one saturated signal color carrying actions and transitions",
+      "long, rule-separated content rows instead of repeated floating cards",
+      "direct labels, local proof, and contact actions",
+      "fluid spacing and mobile-first reflow with no hidden content"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "One accent color owns actions, highlighted language, and location. Never introduce decorative secondary accents inside one brand preset.", "section": "colors" },
+      { "name": "The Contextual Muted Rule", "body": "Gray is not universal. Supporting copy must use the muted token designed for its current light or dark surface.", "section": "colors" },
+      { "name": "The Distance Test", "body": "A visitor should understand the hero promise at a glance without the display type exceeding 6rem or tightening beyond -0.04em.", "section": "typography" },
+      { "name": "The No-Shouting Body Rule", "body": "Uppercase is reserved for labels and display headlines; sentences remain in normal case.", "section": "typography" },
+      { "name": "The Storefront Rule", "body": "If a surface needs a large soft shadow to feel separate, the hierarchy or color boundary is too weak.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use one decisive, locally relevant hero image and preserve readable foreground contrast.",
+      "Do keep the primary action explicit, repeated sparingly, and at least 44px tall.",
+      "Do use full-width color fields, one-pixel rules, and scale to express hierarchy.",
+      "Do preserve visible focus, semantic landmarks, reduced-motion handling, and resilient mobile reflow.",
+      "Do let each preset change the brand atmosphere while retaining the same conversion hierarchy."
+    ],
+    "donts": [
+      "Don't produce generic marketplace templates or interchangeable SaaS landing pages.",
+      "Don't use glassmorphism, decorative gradients, or timid neutral palettes.",
+      "Don't create endless icon-card grids; use rows, split compositions, or one featured proof item.",
+      "Don't imitate fake editorial luxury with italic serif headlines, mono metadata, and ornamental rules.",
+      "Don't use side-stripe accent borders, gradient text, decorative grid backgrounds, or cards rounded beyond 16px.",
+      "Don't paste cycling language or visual cues into a new niche; only the structure is white-label."
+    ]
+  }
+}
