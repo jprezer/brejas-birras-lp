@@ -223,11 +223,9 @@ export function renderPage(config) {
             <a class="button button-primary" href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>
               ${escapeHtml(config.contact.primaryLabel)}${renderArrow()}
             </a>
-            ${socialLinks
-              .map(
-                (link) => `<a class="text-link" href="${safeUrl(link.url)}"${externalAttrs(link.url)}>${escapeHtml(link.label)}</a>`,
-              )
-              .join("")}
+            ${config.contact.secondaryAction
+              ? `<a class="text-link" href="${safeUrl(config.contact.secondaryAction.url)}"${externalAttrs(config.contact.secondaryAction.url)}>${escapeHtml(config.contact.secondaryAction.label)}</a>`
+              : ""}
           </div>
           <div class="brand-proof"><span>${escapeHtml(config.hero.proofLabel)}</span><strong>${escapeHtml(config.hero.proofValue)}</strong></div>
         </div>

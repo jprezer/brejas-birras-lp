@@ -15,11 +15,15 @@ export default {
     locale: "pt_BR",
     schemaType: "BarOrPub",
   },
-  announcement: { label: "Araucária · Terça a domingo · 11h às 00h", actionLabel: "Reservar no pub" },
+  announcement: { label: "Araucária · Terça a domingo · 11h às 00h", actionLabel: "Pedir agora" },
   contact: {
-    primaryLabel: "Reservar no pub",
-    footerPrimaryLabel: "Reservar no pub",
-    primaryUrl: "https://wa.me/message/T6NJPWCFOY3OC1",
+    primaryLabel: "Pedir agora",
+    footerPrimaryLabel: "Pedir agora",
+    primaryUrl: "https://pedido.anota.ai/login/?access_token=eyJhbGciOiJIUzI1NiJ9.eyJpZGNsaWVudCI6IjY5ZjNlNDg1MmY0NGRjZjQxNmVjM2RlZSIsImlkcGFnZSI6IjY5YjliNGM4ZWU3YmQ5MWJjMjgzZjc4NCIsImxpbmtfYWNjZXNzZWQiOmZhbHNlLCJ3aGF0c2FwcCI6dHJ1ZX0.fGM8Jp0RMWo7LnwDG0SJ9zQfY79Z0t3QcSk6dM-62BA&from=whats&f=ms",
+    secondaryAction: {
+      label: "Reservar uma mesa",
+      url: "https://wa.me/message/T6NJPWCFOY3OC1",
+    },
     phone: "+554137972385",
     instagramLabel: "Loja e presentes",
     socialLabel: "Loja e presentes",
@@ -49,8 +53,8 @@ export default {
   },
   statement: {
     label: "O seu ponto de brinde em Araucária",
-    text: "Rótulos para levar. Encontros para viver.",
-    accent: "Encontros para viver.",
+    text: "Para levar. Para ficar.",
+    accent: "Para ficar.",
   },
   services: {
     title: "Loja para escolher. Pub para ficar.",
