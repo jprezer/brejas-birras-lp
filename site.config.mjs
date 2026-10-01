@@ -1,169 +1,100 @@
 export default {
-  preset: "warm",
-
+  preset: "impact",
   brand: {
-    name: "Casa Brasa",
-    shortName: "CB",
-    tagline: "Fogo, tempo e mesa cheia.",
-    logo: "/assets/casa-brasa-logo.svg",
-    logoAlt: "Casa Brasa",
+    name: "Brejas & Birras PUB e SHOP",
+    shortName: "BB",
+    tagline: "Cervejas especiais, presentes e bons encontros em Araucária.",
+    logo: "/assets/brejas-wordmark.svg",
+    logoAlt: "Brejas & Birras",
   },
-
   seo: {
-    title: "Casa Brasa | Cozinha de fogo em Curitiba",
-    description:
-      "Cozinha de fogo, ingredientes locais e uma mesa feita para ficar. Conheça a Casa Brasa, no Batel, em Curitiba.",
-    keywords: [
-      "restaurante em Curitiba",
-      "cozinha de fogo",
-      "restaurante no Batel",
-      "Casa Brasa",
-    ],
-    canonical: "https://casabrasa.example/",
+    title: "Brejas & Birras | Cervejas especiais em Araucária",
+    description: "Brejas & Birras em Araucária: cervejas artesanais, growlers, vinhos, destilados, presentes e um pub para brindar com quem importa.",
+    keywords: ["cervejas artesanais em Araucária", "pub em Araucária", "growler em Araucária", "presentes com cerveja em Araucária", "vinhos e destilados em Araucária", "Brejas & Birras"],
+    canonical: "https://brejas-birras-lp.vercel.app/",
     locale: "pt_BR",
-    schemaType: "Restaurant",
+    schemaType: "BarOrPub",
   },
-
-  announcement: {
-    label: "Batel · Curitiba",
-    actionLabel: "Reservas para esta noite",
-  },
-
+  announcement: { label: "Araucária · Terça a domingo · 11h às 00h", actionLabel: "Ligar agora" },
   contact: {
-    primaryLabel: "Reservar uma mesa",
-    footerPrimaryLabel: "Reservas",
-    primaryUrl: "#visite",
-    phone: "+55 41 99999-0000",
-    instagramLabel: "Conheça a casa",
+    primaryLabel: "Ligar para a loja",
+    footerPrimaryLabel: "Falar com o Brejas",
+    primaryUrl: "tel:+554137972385",
+    phone: "+554137972385",
+    instagramLabel: "Ver Instagram",
     socialLabel: "Instagram",
-    instagramUrl: "https://www.instagram.com/",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Batel%2C+Curitiba%2C+PR",
+    instagramUrl: "https://www.instagram.com/brejasebirras/",
+    mapsUrl: "https://maps.app.goo.gl/NCXdH7xg3omd8mWB9",
   },
-
   navigation: [
-    { label: "Experiência", href: "#servicos" },
-    { label: "À mesa", href: "#avaliacoes" },
-    { label: "Visite", href: "#visite" },
+    { label: "O que tem", href: "#servicos" },
+    { label: "Avaliações", href: "#avaliacoes" },
+    { label: "Como chegar", href: "#visite" },
   ],
-
   hero: {
-    kicker: "Cozinha de fogo em Curitiba",
-    title: ["Fogo lento.", "Mesa", "cheia."],
+    kicker: "PUB · SHOP · PRESENTES",
+    title: ["Brinde", "do seu", "jeito."],
     accentLine: 1,
-    description:
-      "Ingredientes locais, brasa acesa e pratos feitos para atravessar a noite sem pressa.",
-    image: "/assets/casa-brasa-hero.jpg",
-    imageAlt: "Chef finalizando um prato entre as chamas da cozinha",
-    imagePosition: "58% center",
-    proofLabel: "Cozinha aberta",
-    proofValue: "Terça a domingo",
-    scrollLabel: "Descubra a casa",
+    description: "Brejas artesanais, growlers, vinhos, destilados e presentes para levar — ou uma mesa para ficar e aproveitar.",
+    image: "/assets/brejas-hero.jpg",
+    imageAlt: "Cerveja especial apresentada no Brejas & Birras",
+    imagePosition: "60% center",
+    proofLabel: "4,6 no Google",
+    proofValue: "306 avaliações",
+    scrollLabel: "Conheça o Brejas",
   },
-
   statement: {
-    label: "Nossa mesa",
-    text: "A chama muda o ingrediente. O tempo transforma a refeição em encontro.",
-    accent: "encontro.",
+    label: "O seu ponto de brinde em Araucária",
+    text: "Aqui não tem só cerveja. Tem rótulo novo para descobrir, presente para acertar e aquela mesa que faz o encontro render mais uma rodada.",
+    accent: "mais uma rodada.",
   },
-
   services: {
-    title: "Da brasa para a mesa.",
-    description:
-      "Uma cozinha direta, guiada pela estação e feita para dividir. Cada serviço tem o ritmo da chama e o cuidado de quem recebe.",
+    title: "Chega, escolhe e brinda.",
+    description: "Uma loja cheia de possibilidades e um pub pronto para receber — para a sua noite, seu presente ou a próxima descoberta cervejeira.",
     items: [
-      {
-        title: "Menu de fogo",
-        description:
-          "Carnes, vegetais e acompanhamentos preparados na brasa e servidos no centro da mesa.",
-        detail: "Ingredientes locais · Safra do dia",
-      },
-      {
-        title: "Bar da casa",
-        description:
-          "Drinks autorais, vinhos de pequenos produtores e sugestões para acompanhar cada prato.",
-        detail: "Coquetéis · Vinhos · Sem álcool",
-      },
-      {
-        title: "Mesa compartilhada",
-        description:
-          "Um salão acolhedor para jantares, encontros e celebrações sem cerimônia.",
-        detail: "Reservas · Grupos · Eventos",
-      },
+      { title: "Cervejas para descobrir", description: "Artesanais, nacionais, importadas e novidades no freezer para cada paladar e ocasião.", detail: "Latas · garrafas · estilos variados" },
+      { title: "Growlers e outras escolhas", description: "Chopp para levar, vinhos, destilados e opções sem álcool para montar o seu próprio brinde.", detail: "Growlers · vinhos · destilados" },
+      { title: "Presentes que têm história", description: "Kits e combinações para criar um presente com a cara de quem vai receber.", detail: "Kits prontos · escolhas personalizadas" },
     ],
   },
-
-  // Para exibir uma galeria, adicione `gallery` seguindo o exemplo do README.
-
+  gallery: {
+    label: "Tem sempre algo novo no Brejas",
+    title: "Do rótulo que chegou hoje ao presente que você ainda não imaginou.",
+    items: [
+      { image: "/assets/brejas-novidades.jpg", alt: "Novidades de cervejas especiais no Brejas & Birras", caption: "Novidades para provar" },
+      { image: "/assets/brejas-brinde.jpg", alt: "Pessoas brindando no Brejas & Birras", caption: "Motivos para reunir" },
+      { image: "/assets/brejas-presentes.jpg", alt: "Sacola de presente do Brejas & Birras", caption: "Presentes para levar" },
+    ],
+  },
   reviews: {
-    label: "Avaliações de demonstração",
-    title: "Uma noite para ficar na memória.",
-    rating: "4,9",
-    total: "Conteúdo fictício para personalização",
-    sourceLabel: "Ver localização no Google Maps",
+    label: "Avaliações no Google",
+    title: "Quem vem, quer voltar para brindar de novo.",
+    rating: "4,6",
+    total: "306 avaliações no Google",
+    sourceLabel: "Ver avaliações no Google Maps",
     items: [
-      {
-        quote:
-          "A comida chega no centro da mesa e muda o ritmo da noite. Tudo tem sabor de cuidado.",
-        author: "Cliente de exemplo",
-        score: "5/5",
-      },
-      {
-        quote:
-          "Ambiente bonito sem ser formal, serviço atento e uma seleção de vinhos muito bem pensada.",
-        author: "Cliente de exemplo",
-        score: "5/5",
-      },
-      {
-        quote:
-          "Voltaria só pelo pão na brasa, mas o jantar inteiro foi excelente.",
-        author: "Cliente de exemplo",
-        score: "5/5",
-      },
+      { quote: "Não importa qual seja sua escolha, todo cardápio do Brejas é ótimo. As bebidas também são ótimas — melhor pub de Araucária com toda certeza.", author: "Mario Kmiecik Drummer", score: "5/5 no Google" },
+      { quote: "Ambiente top, vou sempre com amigos e família. Tem ótima comida e bebida.", author: "Cliente do Google", score: "5/5 no Google" },
+      { quote: "Ótimo lugar, um dos melhores lugares para tomar um bom chopp na cidade!", author: "Cliente do Google", score: "5/5 no Google" },
     ],
   },
-
   location: {
-    label: "Venha para a mesa",
-    title: "No coração do Batel.",
-    description:
-      "A Casa Brasa é uma marca fictícia criada para demonstrar o white label. Substitua todos os dados antes de publicar.",
-    actionLabel: "Abrir região no Google Maps",
-    addressLines: ["Rua de Exemplo, 120", "Batel · Curitiba — PR"],
-    address: {
-      street: "Rua de Exemplo, 120",
-      city: "Curitiba",
-      region: "PR",
-      postalCode: "80000-000",
-      country: "BR",
-    },
-    hours: [
-      "Terça a quinta · 18h às 23h",
-      "Sexta e sábado · 18h à 00h",
-      "Domingo · 12h às 17h",
-    ],
-    openingHours: [
-      {
-        days: ["Tuesday", "Wednesday", "Thursday"],
-        opens: "18:00",
-        closes: "23:00",
-      },
-      {
-        days: ["Friday", "Saturday"],
-        opens: "18:00",
-        closes: "00:00",
-      },
-      { days: ["Sunday"], opens: "12:00", closes: "17:00" },
-    ],
-    mapEmbedUrl:
-      "https://www.google.com/maps?q=Batel,+Curitiba,+PR&output=embed",
+    label: "Venha brindar com a gente",
+    title: "No centro de Araucária, perto do seu próximo encontro.",
+    description: "Passe para escolher um rótulo, montar um presente ou ficar para aproveitar o pub. Estamos na Av. Archelau de Almeida Tôrres.",
+    actionLabel: "Abrir no Google Maps",
+    addressLines: ["Av. Archelau de Almeida Tôrres, 119", "Centro · Araucária — PR"],
+    address: { street: "Av. Archelau de Almeida Tôrres, 119", city: "Araucária", region: "PR", postalCode: "83702-185", country: "BR" },
+    hours: ["Terça a domingo · 11h às 00h", "Segunda · fechado", "Consulte o Instagram para novidades e eventos"],
+    openingHours: [{ days: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:00", closes: "00:00" }],
+    mapEmbedUrl: "https://www.google.com/maps?q=Av.+Archelau+de+Almeida+T%C3%B4rres,+119,+Arauc%C3%A1ria,+PR&output=embed",
   },
-
   theme: {
-    accent: "oklch(70% 0.17 245)",
-    ink: "oklch(18% 0.025 30)",
-    paper: "oklch(97% 0.004 30)",
-    displayFont: null,
-    bodyFont: null,
+    accent: "#f8c600",
+    accentStrong: "#ffd94a",
+    ink: "#101511",
+    paper: "#f8f6ed",
+    displayFont: "'Archivo Black', Arial Black, sans-serif",
+    bodyFont: "'DM Sans', Arial, sans-serif",
   },
 };

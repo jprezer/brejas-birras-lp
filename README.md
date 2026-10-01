@@ -1,14 +1,12 @@
-# Local Label
+# Brejas & Birras — landing page demonstrativa
 
-Uma base white-label para landing pages de negócios locais. A marca fictícia Casa Brasa demonstra como identidade, conteúdo, SEO, contatos, galeria e localização mudam sem desmontar a estrutura visual.
+Landing page demonstrativa para o Brejas & Birras PUB e SHOP, em Araucária. Reúne conteúdo institucional, localização, horário, links de contato, avaliações públicas e SEO local.
 
-## Comece em cinco minutos
+## Desenvolvimento
 
 1. Instale Node.js 20 ou superior.
-2. Edite `site.config.mjs` com os dados do novo negócio.
-3. Troque as imagens em `public/assets/`.
-4. Rode `npm run dev` e abra `http://127.0.0.1:4173`.
-5. Rode `npm run build` antes de publicar. O resultado pronto fica em `dist/`.
+2. Rode `npm run dev` e abra `http://127.0.0.1:4173`.
+3. Rode `npm run build` antes de publicar. O resultado pronto fica em `dist/`.
 
 O projeto não possui dependências de runtime ou de build. O gerador usa apenas APIs nativas do Node.
 

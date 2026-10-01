@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://casabrasa.example/sitemap.xml
+Sitemap: https://brejas-birras-lp.vercel.app/sitemap.xml

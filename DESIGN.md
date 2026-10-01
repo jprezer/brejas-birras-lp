@@ -69,7 +69,7 @@ components:
 
 **Creative North Star: "Vitrine de Rua"**
 
-Local Label should feel like the most confident storefront on a real block: legible from a distance, specific up close, and immediately useful. Its fictional Casa Brasa demonstration is warm, physical, and high-contrast, while the token layer lets other businesses change the atmosphere without dismantling the hierarchy.
+Brejas & Birras deve transmitir uma loja e pub de bairro vivos: reconhecível de longe, divertido de explorar e direto para pedir, visitar ou encontrar um presente. O amarelo da fachada, o preto e o verde conduzem uma página mais gráfica e energética, sem cair no visual genérico de pub escuro.
 
 The system is image-led and flat by default. Scale, color fields, rules, and typography create structure; effects never substitute for real business proof. It explicitly rejects generic marketplace templates, interchangeable SaaS landing pages, glassmorphism, endless icon-card grids, timid neutral palettes, fake editorial luxury, and decorative gradients.
 

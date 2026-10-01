@@ -9,6 +9,117 @@
   --z-menu: 30;
 }
 
+/* Brejas & Birras: a lively shop-and-pub system built around the storefront's
+   yellow, black and green rather than a generic dark beer-bar treatment. */
+body[data-preset="impact"] {
+  --content-max: 92rem;
+  --page-gutter: clamp(1.25rem, 5.2vw, 6.25rem);
+}
+
+body[data-preset="impact"] .announcement {
+  min-height: 2.7rem;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  letter-spacing: 0.055em;
+}
+
+body[data-preset="impact"] .site-header {
+  min-height: 7.15rem;
+  background: color-mix(in srgb, var(--color-ink) 82%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+body[data-preset="impact"] .brand-lockup {
+  width: clamp(11.25rem, 17vw, 14.5rem);
+  height: 5.1rem;
+}
+
+body[data-preset="impact"] .hero {
+  min-height: max(43rem, calc(100svh - 2.7rem));
+  padding-top: clamp(11.5rem, 19vh, 14rem);
+}
+
+body[data-preset="impact"] .hero-media {
+  filter: saturate(1.12) contrast(1.04);
+  transform: scale(1.03);
+}
+
+body[data-preset="impact"] .hero-shade {
+  background:
+    linear-gradient(90deg, #101511 0%, color-mix(in srgb, #101511 94%, transparent) 40%, color-mix(in srgb, #101511 38%, transparent) 69%, color-mix(in srgb, #101511 8%, transparent) 100%),
+    linear-gradient(0deg, color-mix(in srgb, #101511 84%, transparent), transparent 62%);
+}
+
+body[data-preset="impact"] .kicker {
+  gap: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+body[data-preset="impact"] .kicker::before {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+body[data-preset="impact"] .hero h1 {
+  max-width: 40rem;
+  font-size: clamp(4.6rem, 10vw, 8.6rem);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+}
+
+body[data-preset="impact"] .hero h1 .accent-line {
+  padding-left: clamp(1.5rem, 5vw, 5rem);
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+body[data-preset="impact"] .button,
+body[data-preset="impact"] .header-cta {
+  border-radius: 0;
+}
+
+body[data-preset="impact"] .button-primary {
+  box-shadow: 0.35rem 0.35rem 0 #456f3e;
+}
+
+body[data-preset="impact"] .statement {
+  grid-template-columns: minmax(11rem, 0.58fr) minmax(0, 2fr);
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+body[data-preset="impact"] .statement .section-label,
+body[data-preset="impact"] .statement h2 strong {
+  color: #456f3e;
+}
+
+body[data-preset="impact"] .section-dark {
+  background: #162018;
+}
+
+body[data-preset="impact"] .service-item:hover {
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+}
+
+body[data-preset="impact"] .service-mark {
+  border-radius: 0;
+}
+
+body[data-preset="impact"] .gallery-item,
+body[data-preset="impact"] .gallery-item figcaption {
+  border-radius: 0;
+}
+
+body[data-preset="impact"] .gallery-item-2 {
+  margin-top: clamp(2rem, 6vw, 5rem);
+}
+
+body[data-preset="impact"] .gallery-item-3 {
+  margin-top: clamp(0.75rem, 2vw, 1.8rem);
+}
+
 *,
 *::before,
 *::after {
@@ -885,6 +996,11 @@ button {
 }
 
 @media (max-width: 62rem) {
+  body[data-preset="impact"] .mobile-menu {
+    top: calc(2.7rem + 7.15rem);
+    min-height: calc(100dvh - 9.85rem);
+  }
+
   .desktop-nav {
     display: none;
   }
@@ -983,6 +1099,25 @@ button {
 }
 
 @media (max-width: 45rem) {
+  body[data-preset="impact"] .site-header {
+    min-height: 5.25rem;
+  }
+
+  body[data-preset="impact"] .brand-lockup {
+    width: 9.7rem;
+    height: 3.75rem;
+  }
+
+  body[data-preset="impact"] .mobile-menu {
+    top: calc(2.7rem + 5.25rem);
+    min-height: calc(100dvh - 7.95rem);
+  }
+
+  body[data-preset="impact"] .gallery-item-2,
+  body[data-preset="impact"] .gallery-item-3 {
+    margin-top: 0;
+  }
+
   :root {
     --space-section: clamp(4.25rem, 18vw, 6.5rem);
   }

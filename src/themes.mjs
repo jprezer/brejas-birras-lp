@@ -15,7 +15,7 @@ export const themes = {
       display: "'Barlow Condensed', 'Arial Narrow', sans-serif",
       body: "Manrope, Arial, sans-serif",
       google:
-        "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Manrope:wght@400;500;600;700;800&display=swap",
+        "https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap",
     },
     shape: { radius: "2px", buttonRadius: "2px" },
   },
