@@ -4,7 +4,7 @@ export default {
     name: "Brejas & Birras PUB e SHOP",
     shortName: "BB",
     tagline: "Cervejas especiais, presentes e bons encontros em Araucária.",
-    logo: "/assets/brejas-wordmark.svg",
+    logo: "/assets/brejas-birras-logo.png",
     logoAlt: "Brejas & Birras",
   },
   seo: {

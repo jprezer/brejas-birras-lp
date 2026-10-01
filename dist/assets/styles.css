@@ -30,7 +30,7 @@ body[data-preset="impact"] .site-header {
 }
 
 body[data-preset="impact"] .brand-lockup {
-  width: clamp(11.25rem, 17vw, 14.5rem);
+  width: 5.1rem;
   height: 5.1rem;
 }
 
@@ -1104,7 +1104,7 @@ button {
   }
 
   body[data-preset="impact"] .brand-lockup {
-    width: 9.7rem;
+    width: 3.75rem;
     height: 3.75rem;
   }
 
