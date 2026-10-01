@@ -114,6 +114,9 @@ export function renderPage(config) {
   const theme = resolveTheme(config);
   const canonical = config.seo.canonical;
   const heroImage = new URL(config.hero.image, canonical).href;
+  const socialLinks = config.contact.socialLinks?.length
+    ? config.contact.socialLinks
+    : [{ label: config.contact.socialLabel, url: config.contact.instagramUrl }];
   const schema = {
     "@context": "https://schema.org",
     "@type": config.seo.schemaType,
@@ -137,7 +140,7 @@ export function renderPage(config) {
       opens: entry.opens,
       closes: entry.closes,
     })),
-    sameAs: [config.contact.instagramUrl],
+    sameAs: socialLinks.map((link) => link.url),
   };
   const faviconLetter = encodeURIComponent(config.brand.shortName.slice(0, 1));
   const accent = encodeURIComponent(theme.colors.accent);
@@ -220,9 +223,11 @@ export function renderPage(config) {
             <a class="button button-primary" href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>
               ${escapeHtml(config.contact.primaryLabel)}${renderArrow()}
             </a>
-            <a class="text-link" href="${safeUrl(config.contact.instagramUrl)}"${externalAttrs(config.contact.instagramUrl)}>
-              ${escapeHtml(config.contact.instagramLabel)}
-            </a>
+            ${socialLinks
+              .map(
+                (link) => `<a class="text-link" href="${safeUrl(link.url)}"${externalAttrs(link.url)}>${escapeHtml(link.label)}</a>`,
+              )
+              .join("")}
           </div>
           <div class="brand-proof"><span>${escapeHtml(config.hero.proofLabel)}</span><strong>${escapeHtml(config.hero.proofValue)}</strong></div>
         </div>
@@ -303,7 +308,11 @@ ${config.gallery?.items?.length ? `
       </a>
       <p>${escapeHtml(config.brand.tagline)}</p>
       <div>
-        <a href="${safeUrl(config.contact.instagramUrl)}"${externalAttrs(config.contact.instagramUrl)}>${escapeHtml(config.contact.socialLabel)}</a>
+        ${socialLinks
+          .map(
+            (link) => `<a href="${safeUrl(link.url)}"${externalAttrs(link.url)}>${escapeHtml(link.label)}</a>`,
+          )
+          .join('<span aria-hidden="true">·</span>')}
         <span aria-hidden="true">·</span>
         <a href="${safeUrl(config.contact.primaryUrl)}"${externalAttrs(config.contact.primaryUrl)}>${escapeHtml(config.contact.footerPrimaryLabel)}</a>
       </div>
