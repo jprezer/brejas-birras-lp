@@ -43,7 +43,7 @@ export default {
     kicker: "LOJA · PUB · PRESENTES",
     title: ["Brinde", "do seu", "jeito."],
     accentLine: 1,
-    description: "Uma loja de rótulos e presentes. Um pub de pratos, drinks e chopes para aproveitar sem pressa.",
+    description: "Uma loja de cervejas e presentes. Um pub de pratos, drinks e chopes para aproveitar sem pressa.",
     image: "/assets/brejas-hero.jpg",
     imageAlt: "Cerveja especial apresentada no Brejas & Birras",
     imagePosition: "60% center",
@@ -60,14 +60,14 @@ export default {
     title: "Loja para escolher. Pub para ficar.",
     description: "Duas experiências que se encontram no mesmo endereço: um presente bem escolhido ou uma noite para reunir quem importa.",
     items: [
-      { title: "Loja para descobrir", description: "Cervejas artesanais, growlers, vinhos, destilados e novidades no freezer para levar ou presentear.", detail: "Rótulos · growlers · presentes" },
+      { title: "Loja para descobrir", description: "Cervejas artesanais, growlers, vinhos, destilados e novidades no freezer para levar ou presentear.", detail: "Cervejas · growlers · presentes" },
       { title: "Pub para aproveitar", description: "Pratos à la carte, baguetes, porções, chopes artesanais e drinks para transformar a mesa no programa.", detail: "Comida · chopes · drinks" },
       { title: "Presentes que têm história", description: "Kits e combinações para criar um presente com a cara de quem vai receber.", detail: "Kits prontos · escolhas personalizadas" },
     ],
   },
   gallery: {
     label: "Tem sempre algo novo no Brejas",
-    title: "Do rótulo que chegou hoje ao presente que você ainda não imaginou.",
+    title: "Da cerveja que chegou hoje ao presente que você ainda não imaginou.",
     items: [
       { image: "/assets/brejas-novidades.jpg", alt: "Novidades de cervejas especiais no Brejas & Birras", caption: "Novidades para provar" },
       { image: "/assets/brejas-brinde.jpg", alt: "Pessoas brindando no Brejas & Birras", caption: "Motivos para reunir" },
@@ -89,7 +89,7 @@ export default {
   location: {
     label: "Venha brindar com a gente",
     title: "No centro de Araucária, perto do seu próximo encontro.",
-    description: "Passe para escolher um rótulo, montar um presente ou ficar para aproveitar o pub. Estamos na Av. Archelau de Almeida Tôrres.",
+    description: "Passe para escolher uma cerveja, montar um presente ou ficar para aproveitar o pub. Estamos na Av. Archelau de Almeida Tôrres.",
     actionLabel: "Abrir no Google Maps",
     addressLines: ["Av. Archelau de Almeida Tôrres, 119", "Centro · Araucária — PR"],
     address: { street: "Av. Archelau de Almeida Tôrres, 119", city: "Araucária", region: "PR", postalCode: "83702-185", country: "BR" },
